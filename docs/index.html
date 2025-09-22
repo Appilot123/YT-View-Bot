@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>YT View Bot – Human-Like Watch Sessions Tool</title>
+  <meta name="description" content="YT View Bot lets creators and marketers run human-like watch sessions with configurable duration, quality, speed, proxy-per-session, and multi-account scaling." />
+  <meta name="robots" content="index, follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://github.com/Appilot123/YT-View-Bot" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/favicon-180.png">
+
+  <!-- Open Graph / Twitter (no image) -->
+  <meta property="og:title" content="YT View Bot – Human-Like Watch Sessions Tool">
+  <meta property="og:description" content="Run human-like YouTube watch sessions with duration control, proxy-per-session, and multi-account scaling.">
+  <meta property="og:url" content="https://github.com/Appilot123/YT-View-Bot">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Minimal, accessible, responsive styles -->
+  <style>
+    :root {
+      --bg: #0b0d12;
+      --card: #121622;
+      --text: #e7ecf3;
+      --muted: #a8b3c7;
+      --accent: #5b8cff;
+      --accent-contrast: #0b0d12;
+      --border: #1f2637;
+      --radius: 14px;
+      --maxw: 1100px;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji";
+      background: var(--bg); color: var(--text); line-height: 1.6;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 24px; }
+    header { position: sticky; top: 0; z-index: 10; backdrop-filter: saturate(180%) blur(8px); background: rgba(11,13,18,0.7); border-bottom: 1px solid var(--border); }
+    .nav { display: flex; align-items: center; gap: 20px; justify-content: space-between; }
+    .brand { font-weight: 700; letter-spacing: .2px; }
+    .nav a { color: var(--text); opacity: .9; }
+    .nav ul { margin: 0; padding: 0; list-style: none; display: flex; gap: 18px; flex-wrap: wrap; }
+    .btn {
+      display: inline-block; background: var(--accent); color: var(--accent-contrast); padding: 12px 18px; border-radius: 999px; font-weight: 600;
+      border: 1px solid transparent; transition: transform .06s ease, box-shadow .2s ease;
+    }
+    .btn:hover { text-decoration: none; transform: translateY(-1px); box-shadow: 0 8px 28px rgba(91,140,255,.28); }
+    .hero {
+      display: grid; gap: 22px; align-items: center; grid-template-columns: 1fr; padding: 56px 24px; border-bottom: 1px solid var(--border);
+    }
+    .hero h1 { font-size: clamp(28px, 3.6vw, 44px); line-height: 1.2; margin: 0; }
+    .muted { color: var(--muted); }
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.00));
+      border: 1px solid var(--border); border-radius: var(--radius); padding: 18px;
+    }
+    .grid { display: grid; gap: 16px; }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0,1fr)); }
+    .grid-2 { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    @media (max-width: 960px){ .grid-3, .grid-2{ grid-template-columns: 1fr; } }
+    section { padding: 48px 24px; border-bottom: 1px solid var(--border); }
+    h2 { font-size: clamp(22px, 2.6vw, 30px); margin: 0 0 12px; }
+    h3 { margin: 0 0 8px; font-size: 18px; }
+    pre { background: #0e1220; border: 1px solid var(--border); border-radius: 10px; padding: 14px; overflow: auto; }
+    code { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size: 13.5px; }
+    .kicker { text-transform: uppercase; letter-spacing: .12em; font-size: 12px; color: var(--muted); }
+    .faq details { border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; background: var(--card); }
+    .faq summary { font-weight: 600; cursor: pointer; }
+    .faq details + details { margin-top: 10px; }
+    footer { padding: 28px 24px; color: var(--muted); }
+    .sr-only{ position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0; }
+  </style>
+
+  <!-- Structured Data: SoftwareApplication -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "YT View Bot",
+    "description": "YT View Bot lets creators run human-like YouTube watch sessions with configurable duration, quality, speed, proxy-per-session, and multi-account scaling.",
+    "url": "https://github.com/Appilot123/YT-View-Bot",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Cross-platform",
+    "softwareVersion": "1.0.0",
+    "author": { "@type": "Organization", "name": "Appilot123" },
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "keywords": "yt view bot, human-like watch sessions, multi-account scaling, proxy-per-session, YouTube automation tool",
+    "downloadUrl": "https://github.com/Appilot123/YT-View-Bot/archive/refs/heads/main.zip"
+  }
+  </script>
+</head>
+<body>
+  <header aria-label="Primary">
+    <div class="wrap nav" role="navigation">
+      <div class="brand">YT-View-Bot</div>
+      <ul aria-label="In-page">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#use-cases">Use&nbsp;Cases</a></li>
+        <li><a href="#installation">Installation</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Community</a></li>
+        <li><a class="btn" href="https://github.com/Appilot123/YT-View-Bot" rel="nofollow">Get Started on GitHub</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="top" class="wrap" role="main" aria-label="Content">
+    <!-- HERO -->
+    <section class="hero" aria-label="Hero">
+      <div>
+        <p class="kicker">yt view bot</p>
+        <h1>YT View Bot – Human-Like YouTube Watch Sessions</h1>
+        <p class="muted">Run safe, human-like viewing sessions with duration control, quality/speed settings, proxy-per-session, and multi-account scaling.</p>
+        <p><a class="btn" href="https://github.com/Appilot123/YT-View-Bot" rel="nofollow" aria-label="Open the YT View Bot repository on GitHub">Get Started on GitHub</a></p>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section id="features" aria-labelledby="features-h">
+      <h2 id="features-h">Features</h2>
+      <div class="grid grid-3">
+        <article class="card" aria-label="Duration control">
+          <h3>Duration Control</h3>
+          <p class="muted">Set per-session watch time windows (min/max), randomize intervals, and simulate natural viewing patterns.</p>
+        </article>
+        <article class="card" aria-label="Proxy per session">
+          <h3>Proxy-Per-Session</h3>
+          <p class="muted">Map unique residential/mobile proxies to each session with automatic rotation &amp; health checks.</p>
+        </article>
+        <article class="card" aria-label="Quality & speed">
+          <h3>Quality &amp; Speed</h3>
+          <p class="muted">Control playback quality (e.g., 480p–1080p) and speed ranges to mimic realistic behavior.</p>
+        </article>
+        <article class="card" aria-label="Multi-account scaling">
+          <h3>Multi-Account Scaling</h3>
+          <p class="muted">Run concurrent sessions across many accounts with queueing, retries, and resource limits.</p>
+        </article>
+        <article class="card" aria-label="Search-based discovery">
+          <h3>Search-Based Discovery</h3>
+          <p class="muted">Find videos via keyword search and navigate results before playback to reduce patterns.</p>
+        </article>
+        <article class="card" aria-label="Logs and exports">
+          <h3>Logs &amp; Export</h3>
+          <p class="muted">Structured logs with CSV/JSON export for auditing session ids, proxies, durations, and outcomes.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- USE CASES -->
+    <section id="use-cases" aria-labelledby="use-h">
+      <h2 id="use-h">Use Cases &amp; Benefits</h2>
+      <div class="grid grid-3">
+        <div class="card">
+          <h3>Creators</h3>
+          <p class="muted">Test content visibility scenarios, monitor retention behavior, and validate different upload strategies.</p>
+        </div>
+        <div class="card">
+          <h3>Growth Marketers</h3>
+          <p class="muted">Run controlled, human-like watch sessions to study campaign effects across geos, devices, and proxies.</p>
+        </div>
+        <div class="card">
+          <h3>Automation Developers</h3>
+          <p class="muted">Extend with custom queues, schedulers, and telemetry. Integrate with your proxy farms and dashboards.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- INSTALLATION -->
+    <section id="installation" aria-labelledby="install-h">
+      <h2 id="install-h">Installation Guide</h2>
+      <p class="muted">Set up YT View Bot locally. See full <a href="https://github.com/Appilot123/YT-View-Bot#readme" rel="nofollow">README on GitHub</a> for advanced options.</p>
+
+      <h3>Prerequisites</h3>
+      <ul>
+        <li>Node.js 18+ and npm (or pnpm)</li>
+        <li>Valid proxy list (HTTP(S)/SOCKS), one per line</li>
+      </ul>
+
+      <h3>Steps</h3>
+      <ol>
+        <li>Clone and install:</li>
+      </ol>
+      <pre><code># clone
+git clone https://github.com/Appilot123/YT-View-Bot.git
+cd YT-View-Bot
+
+# install deps
+npm install
+# or: pnpm install</code></pre>
+
+      <ol start="2">
+        <li>Create a config:</li>
+      </ol>
+      <pre><code># config.example.json -&gt; config.json
+cp config.example.json config.json
+
+# edit config.json
+# - targetUrls: array of YouTube URLs or search keywords
+# - duration: { minSec: 90, maxSec: 320 }
+# - quality: "720p"
+# - speed: { min: 0.95, max: 1.15 }
+# - concurrency: 4
+# - proxiesFile: "./proxies.txt"</code></pre>
+
+      <ol start="3">
+        <li>Run sessions:</li>
+      </ol>
+      <pre><code>npm run start
+# optional flags:
+#   --dryRun       # log actions only
+#   --headful      # show browser windows
+#   --shuffle      # randomize order</code></pre>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" aria-labelledby="faq-h" class="faq">
+      <h2 id="faq-h">FAQ</h2>
+
+      <details>
+        <summary>Is this safe and human-like?</summary>
+        <div class="muted">
+          The bot emphasizes human-like patterns (randomized durations, search navigation, varied quality/speed, staggered starts). Use unique, healthy proxies and conservative concurrency.
+        </div>
+      </details>
+
+      <details>
+        <summary>How should I manage proxies?</summary>
+        <div class="muted">
+          Use proxy-per-session with reputable residential/mobile providers. Rotate on failures, monitor latency, and avoid sharing IPs across many accounts.
+        </div>
+      </details>
+
+      <details>
+        <summary>How far can I scale?</summary>
+        <div class="muted">
+          Start small (1–3 concurrency), validate stability, then increase based on CPU/RAM/network and proxy pool size. Use the logs &amp; CSV/JSON export to audit performance.
+        </div>
+      </details>
+
+      <details>
+        <summary>Where can I report issues or request features?</summary>
+        <div class="muted">
+          Use <a href="https://github.com/Appilot123/YT-View-Bot/issues" rel="nofollow">GitHub Issues</a> and <a href="https://github.com/Appilot123/YT-View-Bot/discussions" rel="nofollow">Discussions</a>.
+        </div>
+      </details>
+    </section>
+
+    <!-- CONTACT / COMMUNITY -->
+    <!-- CONTACT / COMMUNITY -->
+<section id="contact" aria-labelledby="contact-h">
+  <h2 id="contact-h">Contact / Community</h2>
+  <p class="muted">
+    Visit the <a href="https://github.com/Appilot123/YT-View-Bot#readme" rel="nofollow noopener" target="_blank">project README</a>, open an
+    <a href="https://github.com/Appilot123/YT-View-Bot/issues" rel="nofollow noopener" target="_blank">Issue</a>
+  </p>
+  <p class="muted">
+    Community chat:
+    <a href="https://discord.gg/vBu9huKBvy" rel="nofollow noopener" target="_blank" aria-label="Join our Discord server">Discord</a>
+    &nbsp;·&nbsp;
+    <a href="https://t.me/devpilot1" rel="nofollow noopener" target="_blank" aria-label="Message us on Telegram">@devpilot1 on Telegram</a>
+  </p>
+</section>
+
+  </main>
+
+  
+
+  <footer class="wrap" role="contentinfo">
+    <p>© <span id="y"></span> YT-View-Bot. All rights reserved.</p>
+    <p class="sr-only">Semantic structure: 1×H1, H2 sections for features, use cases, installation, FAQ, contact.</p>
+  </footer>
+
+  <!-- Small JS: accessibility niceties + current year; defer to keep INP fast -->
+  <script>
+    // Set year
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Improve keyboard focus for in-page anchors
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const id = a.getAttribute('href').slice(1);
+        const el = document.getElementById(id);
+        if (el) {
+          el.setAttribute('tabindex', '-1');
+          el.focus({preventScroll:true});
+        }
+      });
+    });
+  </script>
+</body>
+</html>
